@@ -1,0 +1,9 @@
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  /* object-fit: cover; */
+  max-height: 400px;
+  object-fit: fill;
+}
