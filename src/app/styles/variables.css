@@ -44,25 +44,7 @@
  */
 
 :root {
-  --border-radius: 8px;
-  --box-shadow-small-light: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.15);
-  --box-shadow-medium-light: 0px 3px 6px rgba(0, 0, 0, 0.15), 0px 3px 6px rgba(0, 0, 0, 0.2);
-  --box-shadow-large-light: 0px 10px 20px rgba(0, 0, 0, 0.2), 0px 6px 6px rgba(0, 0, 0, 0.25);
-  --background-color: #f0f2f6;
-  --text-color: #333333;
-  --text-grey-200: #4b5563;
-  --text-grey-100: #6b7280;
 
-  --accent-color: #4e53ee;
-  --accent-color-50: #A5A7F5;
-  --accent-color-200: #3C42C4;
-  
-
-  --secondary-color: #fafafa;
-  --border-color: #d1d5db;
-  --box-shadow-small: var(--box-shadow-small-light);
-  --box-shadow-medium: var(--box-shadow-medium-light);
-  --box-shadow-large: var(--box-shadow-large-light);
 }
 
 /* @media (prefers-color-scheme: dark) {
