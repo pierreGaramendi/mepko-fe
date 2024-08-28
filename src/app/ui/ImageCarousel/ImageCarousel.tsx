@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback, ReactNode } from "react";
 import "./ImageCarousel.css";
-import { BannerComponent } from "../Banner/Banner";
 
 interface ImageCarouselProps {
   images: string[];
@@ -9,8 +8,14 @@ interface ImageCarouselProps {
   children: ReactNode;
 }
 
+function isNotAnArray(variable: any) {
+  return !Array.isArray(variable);
+}
+
 export const ImageCarousel: React.FC<ImageCarouselProps> = ({ children, images, autoChangeInterval = 10000 }) => {
-  console.log("ImageCarousel",images)
+  if (isNotAnArray(images)) {
+    images = [];
+  }
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 

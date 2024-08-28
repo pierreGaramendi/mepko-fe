@@ -1,7 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["http2.mlstatic.com", "http://localhost:3666", "loremflickr.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "http2.mlstatic.com",
+      },
+
+      {
+        protocol: "https",
+        hostname: "loremflickr.com",
+      },
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+      },
+    ],
   },
 };
 

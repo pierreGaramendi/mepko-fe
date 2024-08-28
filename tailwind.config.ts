@@ -10,8 +10,16 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      colors: {
+        "my-primary": "var(--accent-color)",
+        "my-secondary": "var(--secondary-color)",
+
+        "my-primary-50": "var(--accent-color-50)",
+        "my-primary-200": "var(--accent-color-200)",
+
+
       },
     },
   },

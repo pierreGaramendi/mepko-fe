@@ -1,26 +1,34 @@
 import { getProduct } from "@/app/lib/data/getProduct";
-import Image from "next/image";
+import { ShopControls } from "./ShopControls";
+import { GalleryIamges } from "../../components/GalleryImages";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
-  const product: any = await getProduct(params.id);
-  if (!product) {
+  const { id } = params;
+  try {
+    const product: any = await getProduct(id);
+    if (!product) {
+      return {
+        title: "Producto no encontrado",
+      };
+    }
     return {
-      title: "Producto no encontrado",
+      title: `${product.name} | Tu Ecommerce`,
+      description: product.description,
     };
+  } catch (error) {
+    console.error("Database Error:", error);
+    return { message: "Database Error: Failed to Delete Invoice" };
   }
-  return {
-    title: `${product.name} | Tu Ecommerce`,
-    description: product.description,
-  };
 }
 
-export default async function ProductPage({ params: { id } }: { params: { id: string } }) {
+export default async function ProductPage({ params }: { params: { name: string; id: string } }) {
+  const { id } = params;
   const product: any = await getProduct(id);
-  let color = "red";
   return (
     <>
       <div className="flex space-x-10">
-        <div className="product-image w-full">
+        <GalleryIamges images={product.images}></GalleryIamges>
+        {/*         <div className="product-image w-full">
           <Image src={product.images[0]} className="w-full rounded-lg" alt={`Slide ${product.name}`} width={1000} height={760} />
           <div className="flex space-x-2 mt-4">
             <img src={product.images[1]} alt="Red" className="w-16 h-16 rounded-lg cursor-pointer" />
@@ -30,44 +38,27 @@ export default async function ProductPage({ params: { id } }: { params: { id: st
               className="w-16 h-16 rounded-lg cursor-pointer"
             />
           </div>
-        </div>
+        </div> */}
 
         <div className="product-info w-full">
           <h1 className="text-3xl font-bold">{product.name}</h1>
-          <p className="text-gray-600 mt-2">{product.description}</p>
-          <div className="mt-4">
-            <span className="text-green-600 text-xl font-semibold">${product.price}</span>
-            <p className="text-sm text-gray-500 mt-1">Suggested payments with 6 months special financing</p>
+          {/* <p className="text-gray-600 mt-2">{product.description}</p> */}
+          <div className="mt-2">
+            <span className="text-3xl font-semibold">S/{' '}{product.price}</span>
+            <p className="text-sm text-indigo-700 mt-2 cursor-pointer">Ver los medios de pago</p>
           </div>
-          <div className="mt-4">
-            <p className="text-sm text-gray-700">Choose a Color</p>
-            <div className="flex space-x-2 mt-2">
-              <span
-                style={{ minWidth: "30px", minHeight: "30px" }}
-                className={`color-option rounded-full bg-red-500 ring-2 ring-green-600`}
-              />
-              <span className={`color-option bg-green-500 ${color === "green" ? "ring-2 ring-green-600" : ""}`} />
-            </div>
+          <div className="mt-2">
+            <p className="text-gray-700 font-semibold mt-2">Llega gratis el lunes</p>
+            <p className="text-sm text-indigo-700 cursor-pointer mt-2">Más formas de entrega</p>
           </div>
-          <div className="mt-4">
-            <div className="flex items-center space-x-4">
-              <button className="border px-4 py-2 rounded">-</button>
-              <span>3</span>
-              <button className="border px-4 py-2 rounded">+</button>
-            </div>
-            <p className="text-sm text-red-600 mt-2">Only 12 Items Left! Don’t miss it</p>
+          <div className="mt-4 text-sm">
+            <p className="text-lime-600 font-semibold"> Disponibilidad: Quedan {product.stock} en stock</p>
           </div>
-          <div className="mt-6 flex space-x-4">
-            <button className="bg-green-600 text-white px-6 py-3 rounded">Personaliza tu producto</button>
-          </div>
-          <div className="mt-6 flex space-x-4">
-            <button className="bg-green-600 text-white px-6 py-3 rounded">Buy Now</button>
-            <button className="border px-6 py-3 rounded">Add to Cart</button>
-          </div>
+          <ShopControls maxCount={product.stock}></ShopControls>
         </div>
       </div>
       <div className="w-full pt-10">
-        <div className="text-xl">Características del producto</div>
+        <div className="text-xl font-semibold">Características del producto</div>
         <br />
         <p>
           Sony, marca líder a nivel mundial en el ámbito de la fotografía, fabrica productos de alta performance, sin descuidar la

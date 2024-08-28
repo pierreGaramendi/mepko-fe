@@ -1,5 +1,4 @@
 .topbar {
-  background: var(--secondary-color);
   border-bottom: 1px solid var(--border-color);
   padding: 16px;
 }
