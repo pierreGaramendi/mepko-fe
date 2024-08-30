@@ -1,7 +1,7 @@
 .btn-primary {
   @apply flex rounded bg-indigo-600 py-2 px-4 text-sm text-white 
     data-[hover]:bg-indigo-700 data-[hover]:data-[active]:bg-indigo-600
-    disabled:bg-indigo-300 disabled:text-indigo-100 disabled:cursor-not-allowed disabled:opacity-50;
+    disabled:bg-indigo-300 disabled:text-indigo-100 disabled:cursor-not-allowed disabled:opacity-50 items-center justify-center;
 }
 
 .btn-secondary {

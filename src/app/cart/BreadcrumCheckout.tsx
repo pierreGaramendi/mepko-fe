@@ -1,14 +1,11 @@
 "use client";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useRouter } from "next/navigation";
-import { usePathname } from "next/navigation";
+import { ShoppingSteps } from "../constants/shop-steps";
 
-export const BreadcrumbCheckout = () => {
-  const pathname = usePathname();
-  const pathSegments = pathname.split("/").filter((segment) => segment);
-  const currentPath = pathSegments.at(-1);
+export const BreadcrumbCheckout = ({ step }: { step: string }) => {
   const router = useRouter();
-  const steps = ["cart", "checkout", "payment"];
+  const steps: string[] = Object.values(ShoppingSteps);
   return (
     <nav aria-label="breadcrumb">
       <div className="flex items-center space-x-2 text-sm">
@@ -16,7 +13,7 @@ export const BreadcrumbCheckout = () => {
           const href = "/" + segment;
           return (
             <div key={href} className="flex items-center">
-              {currentPath === segment ? (
+              {step === segment ? (
                 <span className="capitalize font-semibold text-indigo-600">{segment}</span>
               ) : (
                 <span className="cursor-pointer capitalize text-gray-600" onClick={() => router.push(href)}>
@@ -29,7 +26,6 @@ export const BreadcrumbCheckout = () => {
                   <MdKeyboardArrowRight />
                 </span>
               ) : null}
-              
             </div>
           );
         })}

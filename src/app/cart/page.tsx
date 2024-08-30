@@ -1,4 +1,5 @@
 "use client";
+import { ShoppingSteps } from "../constants/shop-steps";
 import { BreadcrumbCheckout } from "./BreadcrumCheckout";
 import { TiDelete } from "react-icons/ti";
 const cartItems = [
@@ -76,7 +77,7 @@ const CartShop = () => {
   return (
     <section className="flex-1 w-full">
       <div className="container mx-auto p-4">
-        <BreadcrumbCheckout />
+        <BreadcrumbCheckout step={ShoppingSteps.Cart} />
         <div className="flex">
           <div className="mt-4 w-full pr-12">
             {items.map((item, index) => (
