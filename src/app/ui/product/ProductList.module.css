@@ -1,12 +1,6 @@
 .productCard {
   min-width: 300px;
   width: 300px;
-  text-align: center;
-  margin-right: 20px;
-  flex-shrink: 0;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow-medium);
-  padding: 16px;
 }
 
 .productCard:last-child {

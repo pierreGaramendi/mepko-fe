@@ -26,7 +26,7 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
         &#10094;
       </button>
       <div className={styles.carousel} ref={carouselRef}>
-        <div style={{ padding: "0 40px", display: "flex" }}>{children}</div>
+        <div style={{ padding: "0", display: "flex" }}>{children}</div>
       </div>
       <button className={`${styles.scrollButton} ${styles.scrollButtonRight}`} onClick={() => scroll("right")}>
         &#10095;

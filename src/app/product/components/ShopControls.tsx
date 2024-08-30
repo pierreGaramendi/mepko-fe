@@ -60,12 +60,12 @@ export const ShopControls = ({ maxCount = 3, productId = "" }: IShopControls) =>
           </div>
         </div>
       </div>
-      <div className="mt-6 flex space-x-4 flex-col lg:flex-row">
+      <div className="mt-6 flex 2xl:space-x-4 flex-col 2xl:flex-row">
         <Button onClick={beginShop} className="btn-primary" disabled={loading}>
           {loading ? <LoadingSpinner size={20} color="bg-gray-200" /> : null}
           Comprar Ahora
         </Button>
-        <Button className="btn-secondary">Agregar al carrito</Button>
+        <Button className="btn-secondary mt-2 2xl:mt-0">Agregar al carrito</Button>
       </div>
     </>
   );
