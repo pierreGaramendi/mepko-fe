@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.1.2",
+    "@types/dompurify": "^3.0.5",
     "axios": "^1.7.5",
+    "dompurify": "^3.1.6",
     "keen-slider": "^6.8.6",
     "next": "14.2.5",
     "react": "^18",

@@ -13,4 +13,5 @@ export interface IProduct {
   updatedAt: string;
   __v: number;
   thumbnail: string;
+  features: string;
 }
