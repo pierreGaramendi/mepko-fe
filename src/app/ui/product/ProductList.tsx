@@ -19,7 +19,7 @@ const slugMaker = (productName: string) => {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => (
-  <div className={`bg-gray-100 rounded-md shadow-lg p-4 mr-3 text-center shrink-0 ${styles.productCard}`}>
+  <div className={`bg-gray-100 rounded-lg shadow-lg p-4 mr-3 text-center shrink-0 ${styles.productCard}`}>
     <Link href={`/product/${slugMaker(product.name)}/${product._id}`}>
       <Image src={product.thumbnail} alt={product.name} className={styles.productImage} width={266} height={200} />
       <h3 className="mt-4">{product.name}</h3>

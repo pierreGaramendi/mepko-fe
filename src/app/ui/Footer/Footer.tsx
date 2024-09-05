@@ -5,7 +5,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import styles from './Footer.module.css';
 export const FooterComponent: React.FC = () => {
   return (
-    <footer className={`bg-gray-100 ${styles.footer}`}>
+    <footer className={`bg-gray-100 ${styles.footer}  border-t-[0.1px] border-gray-300`}>
       <div className={styles.container}>
         <div className={styles.column}>
           <h4 className={styles.title}>Company</h4>

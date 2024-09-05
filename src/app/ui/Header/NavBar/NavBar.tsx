@@ -41,7 +41,7 @@ export const NavbarComponent = () => {
           <a className="dropdown-toggle hover:underline underline-offset-4 cursor-pointer">
             Servicios
           </a>
-          <ul className="dropdown-menu bg-gray-100 border border-gray-300 rounded flex flex-row flex-wrap">
+          <ul className="dropdown-menu bg-gray-100 border border-gray-300 rounded-lg flex flex-row flex-wrap">
             {services.map((item) => (
               <li>
                 <Link
@@ -64,7 +64,7 @@ export const NavbarComponent = () => {
           </Link>
         </li>
         <li>
-          <Link href="/about" className="hover:underline underline-offset-4">
+          <Link href="/contact" className="hover:underline underline-offset-4">
             Contacto
           </Link>
         </li>

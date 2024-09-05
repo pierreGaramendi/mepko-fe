@@ -9,6 +9,8 @@ interface IShopControls {
 
 export const startShopping = async (body: IShopControls) => {
   try {
+    //TODO
+    await new Promise((resolve) => setTimeout(resolve, 5000));
     const response = await axios.post(
       "http://localhost:3666/shooping/start-purchase",
       body,

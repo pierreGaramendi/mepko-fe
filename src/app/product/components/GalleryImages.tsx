@@ -11,14 +11,7 @@ export const GalleryIamges: React.FC<GalleryProps> = ({ images }) => {
 
   return (
     <div className="gallery flex flex-col w-full">
-      <Image
-        src={mainImage}
-        className="h-full w-full rounded-lg"
-        alt={`Slide ${mainImage}`}
-        width={851}
-        height={929}
-        layout="responsive"
-      />
+      <Image src={mainImage} className="h-full w-full rounded-lg" alt={`Slide ${mainImage}`} width={851} height={929}/>
       <div className="flex gap-3 mt-2">
         {images.map((image: string, index) => (
           <img

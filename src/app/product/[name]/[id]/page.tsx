@@ -28,7 +28,7 @@ export default async function ProductPage({ params }: { params: { name: string; 
   const product: IProduct = await getProduct(id);
   return (
     <>
-      <div className="flex space-x-10">
+      <div className="flex space-x-5">
         <GalleryIamges images={product.images}></GalleryIamges>
         <div className="product-info w-2/5">
           <h1 className="text-3xl font-bold">{product.name}</h1>

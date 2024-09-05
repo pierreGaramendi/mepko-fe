@@ -46,9 +46,9 @@ interface CartProps {
 
 const CartItem: React.FC<CartItemProps> = ({ name, image, color, size, price, quantity }) => {
   return (
-    <div className="flex items-center justify-between border-b rounded p-4 bg-gray-100 border-gray-300">
+    <div className="flex items-center justify-between border-b rounded-lg p-4 bg-gray-100 border-gray-300">
       <div className="flex items-center space-x-4">
-        <img src={image} alt={name} className="w-16 h-16 rounded object-cover" />
+        <img src={image} alt={name} className="w-16 h-16 rounded-lg object-cover" />
         <div>
           <h4 className="text-lg font-semibold">{name}</h4>
           <p className="text-sm">
@@ -57,13 +57,13 @@ const CartItem: React.FC<CartItemProps> = ({ name, image, color, size, price, qu
         </div>
       </div>
       <div className="flex items-center space-x-6">
-        <div className="flex items-center border rounded border-gray-300">
+        <div className="flex items-center border rounded-lg border-gray-300">
           <button className="px-2 py-1">-</button>
           <span className="px-4 py-1">{quantity}</span>
           <button className="px-2 py-1">+</button>
         </div>
         <p className="text-lg font-semibold">${price.toFixed(2)}</p>
-        <button className="bg-red-600 text-white p-2 rounded"><TiDelete /></button>
+        <button className="bg-red-600 text-white p-2 rounded-lg"><TiDelete /></button>
       </div>
     </div>
   );
@@ -85,7 +85,7 @@ const CartShop = () => {
             ))}
           </div>
           <div className="mt-4 flex justify-end w-full max-w-sm">
-            <div className="w-full max-w-sm p-4 border rounded bg-gray-100 border-gray-300">
+            <div className="w-full max-w-sm p-4 border rounded-lg bg-gray-100 border-gray-300">
               <div className="flex justify-between">
                 <span>Subtotal</span>
                 <span>${subtotal.toFixed(2)}</span>
@@ -98,7 +98,7 @@ const CartShop = () => {
                 <span>Grand total</span>
                 <span>${grandTotal.toFixed(2)}</span>
               </div>
-              <button className="w-full mt-4 bg-indigo-600 text-white py-2 rounded">Checkout now</button>
+              <button className="w-full mt-4 bg-indigo-600 text-white py-2 rounded-lg">Checkout now</button>
             </div>
           </div>
         </div>

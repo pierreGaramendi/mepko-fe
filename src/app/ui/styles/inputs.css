@@ -1,3 +1,6 @@
 .input-primary {
-  @apply p-2 border rounded bg-white border-gray-300 focus:ring-indigo-600 focus:border-indigo-600 focus:outline-none focus:border-[1.5px];
+  @apply p-2 border rounded-lg bg-white border-gray-300 focus:ring-indigo-600 
+  focus:border-indigo-600 
+  focus:outline-none 
+  focus:border-[1.5px];
 }

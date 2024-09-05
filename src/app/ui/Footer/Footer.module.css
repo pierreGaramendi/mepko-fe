@@ -2,8 +2,6 @@
   padding: 20px 0;
   text-align: center;
   width: 100%;
-  box-shadow: var(--box-shadow-medium);
-  border-top: 1px solid var(--border-color);
 }
 
 .container {

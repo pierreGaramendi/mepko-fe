@@ -4,7 +4,7 @@ import { HeaderComponent } from "./ui/Header/Header";
 import { FooterComponent } from "./ui/Footer/Footer";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], preload: false });
 
 export const metadata: Metadata = {
   title: "Nostromo | Compra rapido y seguro.",

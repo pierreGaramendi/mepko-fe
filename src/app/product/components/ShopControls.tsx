@@ -30,8 +30,6 @@ export const ShopControls = ({ maxCount = 3, productId = "" }: IShopControls) =>
       router.push(`/checkout/${sessionId}`);
     } catch (error) {
       console.error("Error:", error);
-    } finally {
-      setLoading(false);
     }
   };
   const [state, dispatch] = useReducer(
@@ -45,14 +43,14 @@ export const ShopControls = ({ maxCount = 3, productId = "" }: IShopControls) =>
           <p className="text-gray-700 text-sm font-medium mt-2">Cantidad</p>
           <div className="flex mt-1">
             <button
-              className="px-4 py-2 rounded-l bg-gray-300 text-indigo-600 font-semibold text-xl"
+              className="px-4 py-2 rounded-l-lg bg-gray-300 text-indigo-600 font-semibold text-xl"
               onClick={() => dispatch({ type: "decrement" })}
             >
               -
             </button>
             <span className="bg-gray-300 px-4 py-2">{state.count}</span>
             <button
-              className="px-4 py-2 rounded-r bg-gray-300 text-indigo-600 font-bold text-xl"
+              className="px-4 py-2 rounded-r-lg bg-gray-300 text-indigo-600 font-bold text-xl"
               onClick={() => dispatch({ type: "increment" })}
             >
               +
