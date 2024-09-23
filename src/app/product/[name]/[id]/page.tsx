@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
       };
     }
     return {
-      title: `${product.name} | Tu Ecommerce`,
+      title: `${product.name} | Nostromo`,
       description: product.description,
     };
   } catch (error) {
