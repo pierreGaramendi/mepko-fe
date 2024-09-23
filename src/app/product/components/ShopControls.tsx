@@ -43,6 +43,7 @@ export const ShopControls = ({ maxCount = 3, productId = "" }: IShopControls) =>
           <p className="text-gray-700 text-sm font-medium mt-2">Cantidad</p>
           <div className="flex mt-1">
             <button
+              disabled={loading}
               className="px-4 py-2 rounded-l-lg bg-gray-300 text-indigo-600 font-semibold text-xl"
               onClick={() => dispatch({ type: "decrement" })}
             >
@@ -50,6 +51,7 @@ export const ShopControls = ({ maxCount = 3, productId = "" }: IShopControls) =>
             </button>
             <span className="bg-gray-300 px-4 py-2">{state.count}</span>
             <button
+              disabled={loading}
               className="px-4 py-2 rounded-r-lg bg-gray-300 text-indigo-600 font-bold text-xl"
               onClick={() => dispatch({ type: "increment" })}
             >
@@ -63,7 +65,7 @@ export const ShopControls = ({ maxCount = 3, productId = "" }: IShopControls) =>
           {loading ? <LoadingSpinner size={20} color="bg-gray-200" /> : null}
           Comprar Ahora
         </Button>
-        <Button className="btn-secondary mt-2 2xl:mt-0">Agregar al carrito</Button>
+        <Button disabled={loading} className="btn-secondary mt-2 2xl:mt-0">Agregar al carrito</Button>
       </div>
     </>
   );

@@ -165,7 +165,7 @@ export default function CheckoutPage({ params }: { params: { sessionId: string }
 
             <div className="w-full md:w-1/3 p-4 rounded-lg bg-gray-100 shadow-lg">
               <h2 className="text-xl font-bold mb-4">Resumen de Pedido</h2>
-              {product.map((prod) => (
+              {product.map((prod, index) => (
                 <div className="flex items-center mb-4">
                   <div className="w-16 h-16 bg-gray-300 rounded-lg mr-4">
                     <img className="rounded-lg" src={prod.thumbnail} alt="" />

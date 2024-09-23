@@ -1,11 +1,11 @@
-import ProductList from "./ui/product/ProductList";
+import ProductList from "./ui/ProductList/ProductList";
 import Carousel from "./ui/carousel/Carousel";
 import { OurBenefitsComponent } from "./ui/OurBenefits/OurBenefits";
 import { SectionWrapperComponent } from "./ui/SectionWrapper/SectionWrapper";
 import { Suspense } from "react";
-import { BannerSkeleton } from "./ui/skeleton/banner-skeleton/BannerSkeleton";
 import { CarouselBannerComponent } from "./ui/CarouselBanner/CarouselBannerComponent";
 import { ImageCarouselSkeleton } from "./ui/ImageCarousel/ImageCarouselSkeleton";
+import { ProductSkeleton } from "./ui/ProductList/ProductListSkeleton";
 
 export default async function Home() {
   return (
@@ -15,12 +15,11 @@ export default async function Home() {
       </Suspense>
       <SectionWrapperComponent title="Mas Vendidos">
         <Carousel>
-          <Suspense fallback={<BannerSkeleton />}>
+          <Suspense fallback={<ProductSkeleton />}>
             <ProductList />
           </Suspense>
         </Carousel>
       </SectionWrapperComponent>
-
       <SectionWrapperComponent title="Nuestros Beneficios">
         <OurBenefitsComponent />
       </SectionWrapperComponent>

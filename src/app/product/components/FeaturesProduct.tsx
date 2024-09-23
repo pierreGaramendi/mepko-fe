@@ -1,5 +1,5 @@
 "use client";
-import DOMPurify from "dompurify";
+import DOMPurify from "isomorphic-dompurify";
 
 export const FeaturesProduct = ({ content }: { content: string }) => {
   const sanitizedContent = DOMPurify.sanitize(content);
