@@ -7,11 +7,18 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], preload: false });
 
 export const metadata: Metadata = {
-  title: "Tu Tienda Online Multipropósito - Encuentra Todo en Nostromo",
+  title: {
+    default: "Compra Online Fácil y Rápido | Nostromo",
+    template: "%s | Nostromo",
+  },
   description:
     "Descubre una amplia variedad de productos en [Nombre de la Web], tu tienda online multipropósito. Desde tecnología hasta moda y hogar, tenemos todo lo que necesitas con ofertas exclusivas y envío rápido. ¡Compra ahora!",
   keywords:
     "ecommerce, tienda online, tecnología, moda, hogar, productos multipropósito, compras en línea, envío rápido, ofertas exclusivas, tienda de productos diversos",
+  alternates: {
+    canonical: "https://www.nostromo.com",
+  },
+  metadataBase: new URL("https://www.nostromo.com"),
 };
 
 export default function RootLayout({

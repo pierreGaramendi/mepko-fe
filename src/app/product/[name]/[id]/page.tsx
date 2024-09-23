@@ -3,6 +3,7 @@ import { ShopControls } from "../../components/ShopControls";
 import { GalleryIamges } from "../../components/GalleryImages";
 import { IProduct } from "@/models/product.model";
 import { FeaturesProduct } from "../../components/FeaturesProduct";
+import { productUrlSlugMaker } from "@/app/ui/ProductList/util/productUrlSlugMaker";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const { id } = params;
@@ -13,9 +14,13 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
         title: "Producto no encontrado",
       };
     }
+    const canonicalUrl = productUrlSlugMaker(product);
     return {
-      title: `${product.name} | Nostromo`,
+      title: `${product.name}`,
       description: product.description,
+      alternates: {
+        canonical: canonicalUrl,
+      },
     };
   } catch (error) {
     console.error("Database Error:", error);
